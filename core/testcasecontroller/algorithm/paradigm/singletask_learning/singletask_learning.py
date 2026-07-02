@@ -117,7 +117,7 @@ class SingleTaskLearning(ParadigmBase):
 
     def _train(self, job, initial_model):
         train_output_dir = os.path.join(self.workspace, "output/train/")
-        if initial_model is not None:
+        if initial_model:
             os.environ["BASE_MODEL_URL"] = initial_model
         else:
             os.environ.pop("BASE_MODEL_URL", None)
